@@ -1,4 +1,11 @@
-# Configure the AWS Provider
+terraform {
+  backend "s3" {
+    bucket = "swen614terraform-state" 
+    key    = "terraform.tfstate"                     # The filename in the bucket
+    region = "us-east-1"                           
+  }
+}
+
 provider "aws" {
   region = "us-east-1"  # Set AWS region to US East 1 (N. Virginia)
 }
